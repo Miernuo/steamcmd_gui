@@ -41,7 +41,9 @@ class steamcmd:
         command = []
         compnum = 0
         command.append(self.steam_cmd)
-        command.append("+login anonymous")
+        user = open('user.txt','r').read()
+        p = open('p.txt','r').read()
+        command.append(f"+login {user} {p}")
         if type(mods_id) == str:  # 字符串转数组
             mods_id = [mods_id]
         for _, mod_id in enumerate(mods_id):
